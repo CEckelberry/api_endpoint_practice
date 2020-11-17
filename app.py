@@ -21,18 +21,20 @@ connect_db(app)
 
 @app.route("/", methods=["GET"])
 def show_cupcakes():
+    """route to show all cupcakes"""
     return render_template("home.html")
 
 
 @app.route("/api/cupcakes", methods=["GET"])
 def list_cupcakes():
+    """route to retrieve all cupcakes"""
     all_cupcakes = [cupcake.serialize() for cupcake in Cupcake.query.all()]
     return jsonify(cupcakes=all_cupcakes)
 
 
 @app.route("/api/cupcakes", methods=["POST"])
 def create_cupcake():
-
+    """route to add a cupcake"""
     data = request.json
     print(data)
     new_cupcake = Cupcake(
@@ -48,12 +50,14 @@ def create_cupcake():
 
 @app.route("/api/cupcakes/<int:id>", methods=["GET"])
 def get_cupcake(id):
+    """route get a single cupcake by id"""
     cupcake = Cupcake.query.get_or_404(id)
     return jsonify(cupcake=cupcake.serialize())
 
 
 @app.route("/api/cupcakes/<int:id>", methods=["PATCH"])
 def update_cupcake(id):
+    """route to update a single cupcake by id"""
     cupcake = Cupcake.query.get_or_404(id)
 
     cupcake.flavor = request.json.get("flavor", cupcake.flavor)
@@ -68,6 +72,7 @@ def update_cupcake(id):
 
 @app.route("/api/cupcakes/<int:id>", methods=["DELETE"])
 def delete_cupcake(id):
+    """route to delete a single cupcake by id"""
     cupcake = Cupcake.query.get_or_404(id)
 
     db.session.delete(cupcake)
