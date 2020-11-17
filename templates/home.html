@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <title>Cupcakes</title>
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <ul id="cupcakes">
+            </ul>
+        </div>
+
+        <div class="row justify-content-center">
+            <form method="POST" action="/api/cupcakes">
+                <label for="flavor">Flavor</label>
+                    <input type="text" placeholder="Enter a flavor" class="form-control" name="flavor">
+                <label for="size">Size</label>
+                    <input type="text" class="form-control" name="size">
+                <label for="rating">Rating</label>
+                <div class="d-flex justify-content-center my-4">
+                    <div class="w-75">
+                    <input type="range" class="custom-range" name="rating" id="customRange11" min="0" max="10">
+                    </div>
+                    <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+                </div>
+                <label for="image">Image</label>
+                    <input type="text" placeholder="Enter an Image URL" class="form-control" name="image">
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>  
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- static javascript -->
+    <script src="/static/app.js"></script>  
+</body>
+</html>
