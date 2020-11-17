@@ -12,7 +12,7 @@ from models import db, connect_db, Cupcake
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "oh-so-secret"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres:///adopt"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres:///cupcakes"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
 
@@ -34,7 +34,7 @@ def list_cupcakes():
 def create_cupcake():
 
     data = request.json
-
+    print(data)
     new_cupcake = Cupcake(
         flavor=data["flavor"],
         size=data["size"],

@@ -19,21 +19,27 @@
         </div>
 
         <div class="row justify-content-center">
-            <form method="POST" action="/api/cupcakes">
+            <form method="POST" action="/api/cupcakes" id="cupcakeform">
                 <label for="flavor">Flavor</label>
-                    <input type="text" placeholder="Enter a flavor" class="form-control" name="flavor">
+                    <input type="text" placeholder="Enter a flavor" class="form-control" name="flavor" id="flavor">
                 <label for="size">Size</label>
-                    <input type="text" class="form-control" name="size">
+                    <input type="text" class="form-control" name="size" id="size">
                 <label for="rating">Rating</label>
-                <div class="d-flex justify-content-center my-4">
-                    <div class="w-75">
-                    <input type="range" class="custom-range" name="rating" id="customRange11" min="0" max="10">
-                    </div>
-                    <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
-                </div>
+                    <select class="browser-default custom-select custom-select-lg mb-3 form-control" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option selected value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
                 <label for="image">Image</label>
-                    <input type="text" placeholder="Enter an Image URL" class="form-control" name="image">
-                <button type="submit" class="btn btn-info">Submit</button>
+                    <input type="text" placeholder="Enter an Image URL" class="form-control" name="image" id="image">
+                <button type="submit" id="cupcakeform" class="btn btn-info">Add</button>
             </form>
         </div>
     </div>
